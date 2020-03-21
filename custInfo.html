@@ -9,21 +9,103 @@
 </head>
 <body>
 
-    <div class = "sidenav">
+    <div id="sidebar" class = "sidenav">
+        <button id="closeBtn" class="btn glyphicon glyphicon-remove" onclick="closeNav()"></button>
         <a href = "custInfo.html">Customer Information</a>
         <a href = "#">Sales Report</a>
         <a href = "#">Reservations</a>
         <a href = "#">Revenue</a>
         <a href = "#">Flights</a>
     </div>
+<div id="main">
 
-    <h1 id ="title">Customer Information</h1>
+    <button id="openbtn" onclick="openNav()" class="btn glyphicon glyphicon-menu-hamburger"></button>
+    <div class="titleBar">
+        <h1 id ="title">Customer Information</hr></h1>
+    </div>
 
-    <table style="width:90%" id="custInfoTable">
+    <div class="inputForm">
+        <form id="custInfoForm">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="fname">First name:</label><br>
+                    <input class="form-control" type="text" id="fname" name="fname">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="lname">Last name:</label>
+                    <input class="form-control" type="text" id="lname" name="lname">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="acctN">Acct #:</label>
+                    <input class="form-control" type="text" id="acctN" name="acctN">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="date">Acct. Creation Date:</label>
+                    <input class="form-control" type="text" id="date" name="date">
+                </div>
+            </div> 
+                <div class="form-group col-md-12">
+                    <label for="address">Address:</label>
+                    <input class="form-control" type="text" id="address" name="address">
+                </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="city">City:</label>
+                    <input class="form-control" type="text" id="city" name="city">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="state">State:</label>
+                    <input class="form-control" type="text" id="state" name="state">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="zip">Zip Code:</label>
+                    <input class="form-control" type="text" id="zip" name="zip">
+                </div>
+            </div>
+                
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="tel">Tele:</label>
+                    <input class="form-control" type="text" id="tel" name="tel">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="text" id="email" name="email">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="creditcard">Credit Card:</label>
+                    <input class="form-control" type="text" id="creditcard" name="creditcard">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="pref">Pref:</label>
+                    <input class="form-control" type="text" id="pref" name="pref">
+                </div>
+            </div>
+                    
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <button class="btn btn-primary"id="Add">Add</button> 
+                </div>
+            </div>
+
+        </form>
+    </div>
+   
+    
+
+    <table class="table" style="width:100%" id="custInfoTable">
         <tr>
             
-            <th width="7%">Last Name</th>
             <th width="7%">First Name</th>
+            <th width="7%">Last Name</th>
             <th>Address</th>
             <th width="5%">City</th>
             <th width="4%">State</th>
@@ -42,37 +124,8 @@
         </tbody>
     </table>
 
-    <div class="inputForm">
-        <form id="custInfoForm">
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname"><br>
-            <label for="address">Address:</label><br>
-            <input type="text" id="address" name="address"><br>
-            <label for="city">City:</label><br>
-            <input type="text" id="city" name="city"><br>
-            <label for="state">State:</label><br>
-            <input type="text" id="state" name="state"><br>
-            <label for="zip">Zip Code:</label><br>
-            <input type="text" id="zip" name="zip"><br>
-            <label for="tel">Tele:</label><br>
-            <input type="text" id="tel" name="tel"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="acctN">Acct #:</label><br>
-            <input type="text" id="acctN" name="acctN"><br>
-            <label for="date">Acct. Creation Date:</label><br>
-            <input type="text" id="date" name="date"><br>
-            <label for="creditcard">Credit Card:</label><br>
-            <input type="text" id="creditcard" name="creditcard"><br>
-            <label for="pref">Pref:</label><br>
-            <input type="text" id="pref" name="pref"><br>
-            <button id="Add">Add</button>  
-        </form>
-    </div>
     
-   
+</div>
 
     <script>
 
@@ -82,35 +135,23 @@
         $(document).ready(function(){
             $('#Add').click(function(){
 
-                var last = $('#lname').val();
-                console.log(last);
                 var first = $('#fname').val();
-                console.log(first);
+                var last = $('#lname').val();
                 var address = $('#address').val();
-                console.log(address);
                 var city = $('#city').val();
-                console.log(city);
                 var state = $('#state').val();
-                console.log(state);
                 var zip = $('#zip').val();
-                console.log(zip);
                 var tel = $('#tel').val();
-                console.log(tel);
                 var email = $('#email').val();
-                console.log(email);
                 var acctNumber = $('#acctN').val();
-                console.log(acctNumber);
                 var date = $('#date').val();
-                console.log(date);
                 var creditcard = $('#creditcard').val();
-                console.log(creditcard);
                 var pref = $('#pref').val();
-                console.log(pref);
                 
                 $('#custInfoTable tr:last').after(
                     
-                    " <tr> <td contenteditable=true>" + last + "</td>" +
-                    " <td contenteditable=true>" + first + "</td>" +
+                    " <tr> <td contenteditable=true>" + first + "</td>" +
+                    " <td contenteditable=true>" + last + "</td>" +
                     " <td contenteditable=true>" + address + "</td>" +
                     " <td contenteditable=true>" + city + "</td>" +
                     " <td contenteditable=true>" + state + "</td>" +
@@ -121,7 +162,7 @@
                     " <td contenteditable=true>" + date + "</td>" +
                     " <td contenteditable=true>" + creditcard + "</td>" +
                     " <td contenteditable=true>" + pref + "</td>" +
-                    " <td><button onclick=deleteRow(this)>X</button></td></tr>"
+                    " <td><button class='btn glyphicon glyphicon-remove' onclick=deleteRow(this)></button></td></tr>"
                 );
 
             });
@@ -144,6 +185,18 @@
             console.log("trying to delete");
             document.getElementById("custInfoTable").deleteRow(element.closest('tr').rowIndex);
         }; 
+
+        function openNav() {
+            
+            document.getElementById("sidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            console.log("Working");
+            document.getElementById("sidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
 
     </script>
 
