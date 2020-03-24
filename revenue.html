@@ -22,25 +22,19 @@
 <div id="main">
     <button id="openbtn" onclick="openNav()" class="btn glyphicon glyphicon-menu-hamburger"></button>
     <div class="titleBar">
-        <h1 id ="title">Reservations</hr></h1>
+        <h1 id ="title">Revenue</hr></h1>
     </div>
 
-    <div class="md-form mt-0" style="width: 400px; margin-top: 100px;">
-        <form>
-            <div class="form-inline">
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default"></input>
-                    <input class="form-control" type="text" placeholder="Flight Number" aria-label="Search">
-                    
-                </div>
-            </div>
-        </form>
+    <div class="dropDownSelect" style="width: 200px; margin-top: 100px;">
+        <select class="form-control">
+            <option value="" disabled selected>Flights</option>
+         
+        </select>
     </div>
 
     <table class="table" style="width:100%" id="custInfoTable">
         <tr>
             <th>Reservation Number</th>
-            <th>Date</th>
             <th>Passenger(s)</th>
             <th>Legs</th>
             <th>Total Fare</th>
@@ -53,22 +47,19 @@
         </tbody>
     </table>
 
-    <div class="md-form mt-0" style="width: 400px; margin-top: 100px;">
-        <form>
-            <div class="form-inline">
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default"></input>
-                    <input class="form-control" type="text" placeholder="Customer" aria-label="Search">
-                    
-                </div>
-            </div>
-        </form>
+    <h3>Total Revenue:</h3>
+   
+
+    <div class="dropDownSelect" style="width: 200px; margin-top: 100px;">
+        <select class="form-control">
+            <option value="" disabled selected>Customer</option>
+         
+        </select>
     </div>
 
     <table class="table" style="width:100%" id="custInfoTable">
         <tr>
             <th>Reservation Number</th>
-            <th>Date</th>
             <th>Passenger(s)</th>
             <th>Legs</th>
             <th>Total Fare</th>
@@ -81,8 +72,33 @@
         </tbody>
     </table>
 
-    
+    <h3>Total Revenue:</h3>
+   
 
+    <div class="dropDownSelect" style="width: 200px; margin-top: 100px;">
+        <select class="form-control">
+            <option value="" disabled selected>City</option>
+         
+        </select>
+    </div>
+
+    <table class="table" style="width:100%" id="custInfoTable">
+        <tr>
+            <th>Reservation Number</th>
+            <th>Passenger(s)</th>
+            <th>Legs</th>
+            <th>Total Fare</th>
+            <th>Fare Restrictions</th>
+            <th>Booking Fee</th>  
+            <th>Customer Rep.</th>
+        </tr>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <h3>Total Revenue:</h3>
+</div>
 <script>
 
         function openNav() {    
